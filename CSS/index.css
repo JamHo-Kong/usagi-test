@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kaisei+Opti:wght@700&family=Roboto+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/earlyaccess/cwtexkai.css');
+
+:root {
+    font-family: 'Consolas', 'Roboto Mono', Helvetica, Arial, sans-serif;
+    font-size: 1.3vw;
+    font-weight: bold;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.loading {
+    height: 100%;
+    width: 100%;
+    font-size: 4rem;
+    background: #fff;
+    text-align: center;
+    position: absolute;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    --scroll: 0;
+    height: 200vh;
+}
+
+.sticky {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sticky span {
+    line-height: 8rem;
+    font-size: 8.4rem;
+    color: #25c7d9;
+    position: absolute;
+    clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% calc((100 - 3 * var(--scroll)) * 1%),
+        0% calc((100 - 3 * var(--scroll)) * 1%)
+    );
+}
+
+.sticky span:nth-child(2) {
+    font-size: 4rem;
+    color: rgba(37, 199, 217, 0.5);
+    clip-path: polygon(
+        100% calc((100 - 3 * var(--scroll)) * 1%),
+        0% calc((100 - 3 * var(--scroll)) * 1%),
+        0% calc((100 - var(--scroll)) * 1%),
+        100% calc((100 - var(--scroll)) * 1%)
+    );
+}
+
+.sticky span:nth-child(3),
+span:nth-child(4) {
+    color: #f2762e;
+    clip-path: polygon(
+        100% 100%,
+        0% 100%,
+        0% calc((100 - var(--scroll)) * 1%),
+        100% calc((100 - var(--scroll)) * 1%)
+    );
+}
+
+.footer {
+    background: #3f5f73;
+    font-family: 'KaiTi', 'STKaiti', 'PingFang SC';
+    font-size: 1rem;
+    color: #f2e5a0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    padding: .5vw .5vw;
+}
+
+a {
+    text-decoration: none;
+    color: #f2e5a0;
+    outline: none;
+    cursor: pointer;
+}
